@@ -15,10 +15,13 @@
 
 import datetime
 import json
+import logging
 import os
 import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
+
+logger = logging.getLogger(__name__)
 
 from a2ui.basic_catalog.provider import BasicCatalog
 from a2ui.schema.manager import A2uiSchemaManager
