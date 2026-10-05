@@ -125,7 +125,7 @@ def _extract_parts(parts: list) -> list[dict]:
         root = getattr(p, "root", p)
         if isinstance(root, TextPart) and getattr(root, "text", None):
             txt = root.text
-            if txt and not txt.startswith("Cannot add session to memory"):
+            if txt and not txt.startswith("Cannot add session to memory") and "is not defined" not in txt:
                 out.append({"kind": "text", "text": txt})
         elif getattr(root, "data", None) is not None:
             meta = getattr(root, "metadata", None) or {}
